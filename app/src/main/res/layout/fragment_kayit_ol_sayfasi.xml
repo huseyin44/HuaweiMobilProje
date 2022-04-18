@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/fullscreenBackgroundColor"
+    android:theme="@style/ThemeOverlay.Huaweiproje.FullscreenContainer"
+    tools:context=".KayitOlSayfasi">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <TableLayout
+        android:id="@+id/KayitOlTableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TableRow
+            android:id="@+id/KayitOlTableLayoutSatir1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="110dp">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="KAYIT OL"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="45sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/KayitOlTableLayoutSatir2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="80dp">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Ad"
+                android:layout_gravity="center"
+                android:background="#81ffd8"
+                android:textColorHint="@color/black"
+                android:minWidth="355dp"
+                android:textSize="25sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/KayitOlTableLayoutSatir3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="80dp">
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#81ffd8"
+                android:textColorHint="@color/black"
+                android:minWidth="355dp"
+                android:textSize="25sp"
+                android:hint="Soyad" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/KayitOlTableLayoutSatir4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="80dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#cd0019"
+                android:textColorHint="@color/black"
+                android:minWidth="355dp"
+                android:textSize="25sp"
+                android:hint="Email" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/KayitOlTableLayoutSatir5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="80dp">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#cd0019"
+                android:textColorHint="@color/black"
+                android:minWidth="355dp"
+                android:textSize="25sp"
+                android:hint="Sifre" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="100dp">
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="375dp"
+                android:textSize="15sp"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:text="KVKK Aydınlatma Metnini Okudum, Kabul Ediyiorum." />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="120dp">
+            <Button
+                android:id="@+id/KayitOlButon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="355dp"
+                android:textSize="25sp"
+                android:text="Kayıt Ol" />
+        </TableRow>
+    </TableLayout>
+
+</FrameLayout>

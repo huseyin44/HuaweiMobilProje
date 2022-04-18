@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/kayitOlSayfasi">
 
+    <fragment
+        android:id="@+id/kayitOlSayfasi"
+        android:name="com.example.huaweiproje.KayitOlSayfasi"
+        android:label="fragment_kayit_ol_sayfasi"
+        tools:layout="@layout/fragment_kayit_ol_sayfasi" >
+        <action
+            android:id="@+id/action_kayitOlSayfasi_to_siparisSayfasi"
+            app:destination="@id/siparisSayfasi" />
+    </fragment>
+    <fragment
+        android:id="@+id/siparisSayfasi"
+        android:name="com.example.huaweiproje.SiparisSayfasi"
+        android:label="fragment_siparis_sayfasi"
+        tools:layout="@layout/fragment_siparis_sayfasi" />
 </navigation>
