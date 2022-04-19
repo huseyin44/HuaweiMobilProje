@@ -1,11 +1,14 @@
 package com.example.huaweiproje
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.huaweiproje.databinding.FragmentKayitOlSayfasiBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -24,13 +27,55 @@ class KayitOlSayfasi : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setListeners()
-    }
 
+    }
     //Siparis Sayfasına gitme
     private fun setListeners(){
         mBinding.KayitOlButon.setOnClickListener {
-            findNavController().navigate(R.id.action_kayitOlSayfasi_to_siparisSayfasi)
+            if(isInputCorrect()){
+                findNavController().navigate(R.id.action_kayitOlSayfasi_to_siparisSayfasi)
+            }
+            else {
+            }
         }
+
+    }
+    private fun isInputCorrect(): Boolean {
+        val username = mBinding.adTextview.text
+        val usersurname = mBinding.soyadTextview.text
+        val usermail =mBinding.textEmailAddress.text
+        val userpassword=mBinding.sifreTextview.text
+
+        if (username.isNullOrBlank()) {
+            Toast.makeText(activity, "İsim boş olmamalı", Toast.LENGTH_LONG).show()
+            return false
+        }
+        if (usersurname.isNullOrBlank()) {
+            Toast.makeText(activity, "Soyisim boş olmamalı", Toast.LENGTH_LONG).show()
+            return false
+        }
+        if (usermail.isNullOrBlank()) {
+            Toast.makeText(activity, "Mail boş olmamalı", Toast.LENGTH_LONG).show()
+            return false
+        }
+        if (usermail.toString()!="@yalova.edu.tr") {
+            Toast.makeText(activity, "Email xxx@yalova.edu.tr Formatında olmalıdır.", Toast.LENGTH_LONG).show()
+            return false
+        }
+        if (userpassword.isNullOrBlank()) {
+            Toast.makeText(activity, "Şifre boş olmamalı", Toast.LENGTH_LONG).show()
+            return false
+        }
+        if (userpassword.toString().length < 8) {
+            Toast.makeText(activity, "Şifre 8 karekterden az olmamalı", Toast.LENGTH_LONG).show()
+            return false
+        }
+        if (mBinding.KvkkCheck.isChecked ==false ) {
+            Toast.makeText(activity, "Checkbox işaretli olmalıdır", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        return true
     }
 
     override fun onCreateView(

@@ -18,5 +18,10 @@
         android:id="@+id/siparisSayfasi"
         android:name="com.example.huaweiproje.SiparisSayfasi"
         android:label="fragment_siparis_sayfasi"
-        tools:layout="@layout/fragment_siparis_sayfasi" />
+        tools:layout="@layout/fragment_siparis_sayfasi" >
+
+        <argument
+            android:name="ArgumentSiparis"
+            app:argType="string"/>
+    </fragment>
 </navigation>

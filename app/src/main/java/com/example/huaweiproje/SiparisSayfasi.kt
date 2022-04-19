@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
-import com.example.huaweiproje.databinding.FragmentKayitOlSayfasiBinding
 import com.example.huaweiproje.databinding.FragmentSiparisSayfasiBinding
 
 
@@ -23,6 +23,16 @@ private const val ARG_PARAM2 = "param2"
 class SiparisSayfasi : Fragment() {
 
     private lateinit var mbinding :FragmentSiparisSayfasiBinding
+    private val args : SiparisSayfasiArgs by navArgs()
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        mbinding = FragmentSiparisSayfasiBinding.inflate(layoutInflater)
+        return mbinding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -38,15 +48,11 @@ class SiparisSayfasi : Fragment() {
         //Pide Resmi
         Glide.with(this).load("https://im.haberturk.com/2019/10/30/ver1572512151/acik-pide_2535762_1200x627.jpg")
             .into(mbinding.yemekresmi2)
-    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        mbinding = FragmentSiparisSayfasiBinding.inflate(layoutInflater)
-        return mbinding.root
+
+
+
+
     }
 
 
