@@ -1,13 +1,18 @@
 package com.example.huaweiproje
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.huaweiproje.databinding.FragmentSiparisSayfasiBinding
+
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -34,6 +39,66 @@ class SiparisSayfasi : Fragment() {
         return mbinding.root
     }
 
+    private fun ucrethesapla(){
+        var ucretsifirlama =0
+
+        mbinding.LahmacunRadiogroup.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { group, checkedId ->
+            var Lahmacun_selectedId = mbinding.LahmacunRadiogroup.checkedRadioButtonId
+            val radio: RadioButton = group.findViewById(Lahmacun_selectedId)
+            Log.e("selectedtext-->Lahmacun",radio.text.toString())
+
+            var lahmacun_ucret =0
+            if(radio.text.toString()=="Küçük"){
+                mbinding.lahmacunucrettutucu.text=ucretsifirlama.toString() //ucret sifirlama
+                lahmacun_ucret=10
+            }
+            if(radio.text.toString()=="Orta"){
+                mbinding.lahmacunucrettutucu.text=ucretsifirlama.toString()
+                lahmacun_ucret=20
+            }
+            if(radio.text.toString()=="Büyük"){
+                mbinding.lahmacunucrettutucu.text=ucretsifirlama.toString()
+                lahmacun_ucret=30
+            }
+            mbinding.lahmacunucrettutucu.text=lahmacun_ucret.toString()
+        })
+        mbinding.PideRadiogroup.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { group, checkedId ->
+            var Pide_selectedId = mbinding.PideRadiogroup.checkedRadioButtonId
+            val radio: RadioButton = group.findViewById(Pide_selectedId)
+            Log.e("selectedtext-->Pide",radio.text.toString())
+
+            var pide_ucret =0
+            if(radio.text.toString()=="Küçük"){
+                mbinding.pideucretutucu.text=ucretsifirlama.toString()
+                pide_ucret=10
+            }
+            if(radio.text.toString()=="Orta"){
+                mbinding.pideucretutucu.text=ucretsifirlama.toString()
+                pide_ucret=20
+            }
+            if(radio.text.toString()=="Büyük"){
+                mbinding.pideucretutucu.text=ucretsifirlama.toString()
+                pide_ucret=30
+            }
+            mbinding.pideucretutucu.text=pide_ucret.toString()
+        })
+
+        mbinding.ucrethesaplamabutonu.setOnClickListener {
+            if (mbinding.PideRadiogroup.checkedRadioButtonId!=-1
+                && mbinding.LahmacunRadiogroup.checkedRadioButtonId!=-1){
+
+                mbinding.ucrettextview.text="Ödemeniz Gereken Ücret "+
+                        (Integer.parseInt(mbinding.lahmacunucrettutucu.text as String)+
+                                Integer.parseInt(mbinding.pideucretutucu.text as String)).toString()+"TL Dir."
+
+                mbinding.ucrettextview.visibility=View.VISIBLE
+            }
+            else{
+                Toast.makeText(activity, "Sipariş boylarını seçiniz", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -49,10 +114,7 @@ class SiparisSayfasi : Fragment() {
         Glide.with(this).load("https://im.haberturk.com/2019/10/30/ver1572512151/acik-pide_2535762_1200x627.jpg")
             .into(mbinding.yemekresmi2)
 
-
-
-
-
+        ucrethesapla()
     }
 
 
@@ -76,3 +138,4 @@ class SiparisSayfasi : Fragment() {
             }
     }
 }
+

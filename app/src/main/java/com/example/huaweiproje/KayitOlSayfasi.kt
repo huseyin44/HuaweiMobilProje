@@ -1,14 +1,14 @@
 package com.example.huaweiproje
 
-import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.text.TextUtils
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.example.huaweiproje.databinding.FragmentKayitOlSayfasiBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -36,10 +36,14 @@ class KayitOlSayfasi : Fragment() {
                 findNavController().navigate(R.id.action_kayitOlSayfasi_to_siparisSayfasi)
             }
             else {
+                findNavController().navigate(R.id.action_kayitOlSayfasi_to_siparisSayfasi)
             }
         }
-
     }
+
+    //email kontrol
+    private fun String.isValidEmail() = !TextUtils.isEmpty(this) && Patterns.EMAIL_ADDRESS.matcher(this).matches()
+
     private fun isInputCorrect(): Boolean {
         val username = mBinding.adTextview.text
         val usersurname = mBinding.soyadTextview.text
@@ -58,7 +62,11 @@ class KayitOlSayfasi : Fragment() {
             Toast.makeText(activity, "Mail boş olmamalı", Toast.LENGTH_LONG).show()
             return false
         }
-        if (usermail.toString()!="@yalova.edu.tr") {
+        if (usermail.toString().isValidEmail().not()) {
+            Toast.makeText(activity, "Gecerli Email Adresi Olmalı", Toast.LENGTH_LONG).show()
+            return false
+        }
+        if (usermail.toString().contains("@yalova.edu.tr", ignoreCase = true)==false) {
             Toast.makeText(activity, "Email xxx@yalova.edu.tr Formatında olmalıdır.", Toast.LENGTH_LONG).show()
             return false
         }

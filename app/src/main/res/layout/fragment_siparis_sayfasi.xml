@@ -13,7 +13,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:minHeight="200dp">
+            android:minHeight="150dp">
             <TableLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:minHeight="180dp">
+            android:minHeight="130dp">
             <TableLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -105,33 +105,47 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
-                            <RadioButton
+                            <RadioGroup
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Küçük"
-                                android:minHeight="50dp"
-                                android:textSize="20dp"
-                                android:textColor="@color/black"
-                                android:background="#008000"
-                                android:minWidth="100dp"/>
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Orta"
-                                android:minHeight="50dp"
-                                android:textSize="20dp"
-                                android:textColor="@color/black"
-                                android:background="#0014db"
-                                android:minWidth="90dp"></RadioButton>
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Büyük"
-                                android:minHeight="50dp"
-                                android:textSize="20dp"
-                                android:textColor="@color/black"
-                                android:background="#e91700"
-                                android:minWidth="90dp"></RadioButton>
+                                android:id="@+id/Lahmacun_radiogroup"
+                                android:orientation="horizontal">
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone"
+                                    android:id="@+id/lahmacunucrettutucu"/>
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/Kucuk_Radio1"
+                                    android:text="Küçük"
+                                    android:minHeight="50dp"
+                                    android:textSize="20dp"
+                                    android:textColor="@color/black"
+                                    android:background="#008000"
+                                    android:minWidth="100dp"/>
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Orta"
+                                    android:minHeight="50dp"
+                                    android:textSize="20dp"
+                                    android:textColor="@color/black"
+                                    android:background="#0014db"
+                                    android:id="@+id/Kucuk_Radio2"
+                                    android:minWidth="90dp"></RadioButton>
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Büyük"
+                                    android:minHeight="50dp"
+                                    android:textSize="20dp"
+                                    android:textColor="@color/black"
+                                    android:background="#e91700"
+                                    android:id="@+id/Kucuk_Radio3"
+                                    android:minWidth="90dp"></RadioButton>
+                            </RadioGroup>
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -140,7 +154,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:minHeight="180dp">
+            android:minHeight="130dp">
             <TableLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -188,33 +202,47 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
-                            <RadioButton
+                            <RadioGroup
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Küçük"
-                                android:minHeight="50dp"
-                                android:textSize="20dp"
-                                android:textColor="@color/black"
-                                android:background="#008000"
-                                android:minWidth="100dp"/>
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Orta"
-                                android:minHeight="50dp"
-                                android:textSize="20dp"
-                                android:textColor="@color/black"
-                                android:background="#0014db"
-                                android:minWidth="90dp"></RadioButton>
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Büyük"
-                                android:minHeight="50dp"
-                                android:textSize="20dp"
-                                android:textColor="@color/black"
-                                android:background="#e91700"
-                                android:minWidth="90dp"></RadioButton>
+                                android:id="@+id/Pide_radiogroup"
+                                android:orientation="horizontal">
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone"
+                                    android:id="@+id/pideucretutucu"/>
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/Kucuk_Radio4"
+                                    android:text="Küçük"
+                                    android:minHeight="50dp"
+                                    android:textSize="20dp"
+                                    android:textColor="@color/black"
+                                    android:background="#008000"
+                                    android:minWidth="100dp"/>
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Orta"
+                                    android:minHeight="50dp"
+                                    android:textSize="20dp"
+                                    android:textColor="@color/black"
+                                    android:background="#0014db"
+                                    android:id="@+id/Kucuk_Radio5"
+                                    android:minWidth="90dp"></RadioButton>
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Büyük"
+                                    android:minHeight="50dp"
+                                    android:textSize="20dp"
+                                    android:textColor="@color/black"
+                                    android:background="#e91700"
+                                    android:id="@+id/Kucuk_Radio6"
+                                    android:minWidth="90dp"></RadioButton>
+                            </RadioGroup>
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -227,16 +255,19 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/ucrethesaplamabutonu"
                 android:text="HESAPLA">
             </Button>
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:minHeight="50dp">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Ödemeniz Gerek Ücret XXX TL"
+                android:id="@+id/ucrettextview"
+                android:visibility="invisible"
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:background="#d8cd00">
