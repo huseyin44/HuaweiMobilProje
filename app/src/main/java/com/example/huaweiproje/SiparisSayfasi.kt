@@ -9,6 +9,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavArgs
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.huaweiproje.databinding.FragmentSiparisSayfasiBinding
@@ -26,7 +27,6 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class SiparisSayfasi : Fragment() {
-
     private lateinit var mbinding :FragmentSiparisSayfasiBinding
     private val args : SiparisSayfasiArgs by navArgs()
 
@@ -101,6 +101,12 @@ class SiparisSayfasi : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //safe args ile gelen veriler
+        val isim = args.isimArgs
+        val soyisim = args.soyisimArgs
+        val mailarg=args.mailArgs
+        mbinding.adText2.text=isim+" "+soyisim
+        mbinding.mailText2.text=mailarg
 
         //profil resmi yükleme
         Glide.with(this).load("https://i.picsum.photos/id/1025/367/267.jpg?hmac=xlFGYDf9CLQQCJ2NTBxS8qTTOLkD28zsznZAt9XFCJw")

@@ -27,20 +27,20 @@ class KayitOlSayfasi : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setListeners()
-
     }
+
     //Siparis Sayfasına gitme
     private fun setListeners(){
         mBinding.KayitOlButon.setOnClickListener {
             if(isInputCorrect()){
-                findNavController().navigate(R.id.action_kayitOlSayfasi_to_siparisSayfasi)
-            }
-            else {
-                findNavController().navigate(R.id.action_kayitOlSayfasi_to_siparisSayfasi)
+                val isim = mBinding.adTextview.text.toString()
+                val soyisim = mBinding.soyadTextview.text.toString()
+                val kullanicimail = mBinding.textEmailAddress.text.toString()
+                val action= KayitOlSayfasiDirections.actionKayitOlSayfasiToSiparisSayfasi(kullanicimail,isim,soyisim)
+                findNavController().navigate(action)
             }
         }
     }
-
     //email kontrol
     private fun String.isValidEmail() = !TextUtils.isEmpty(this) && Patterns.EMAIL_ADDRESS.matcher(this).matches()
 

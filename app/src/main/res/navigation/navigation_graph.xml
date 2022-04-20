@@ -21,7 +21,13 @@
         tools:layout="@layout/fragment_siparis_sayfasi" >
 
         <argument
-            android:name="ArgumentSiparis"
-            app:argType="string"/>
+            android:name="mail_args"
+            app:argType="string" />
+        <argument
+            android:name="isim_args"
+            app:argType="string" />
+        <argument
+            android:name="soyisim_args"
+            app:argType="string" />
     </fragment>
 </navigation>
